@@ -1,14 +1,24 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
-import { selectPostIds, getPostsStatus, getPostsError } from "../features/posts/postSlice"
+import { selectPostIds /*, getPostsStatus, getPostsError*/ } from "../features/posts/postSlice"
  import PostsExcerpt from "./PostsExcerpt.js"
-
+import { useGetPostQuery } from '../features/posts/postSlice.js'
 const PostList = () => {
+
     /*--- Hook ---*/
+
   //  const dispatch = useDispatch()
-    const postsError = useSelector(getPostsError)
-    const postsStatus = useSelector(getPostsStatus)
-    const orderedPostsId = useSelector(selectPostIds)
+    const {
+        isError,
+        isSuccess,
+        isLoading,
+        error
+    } = useGetPostQuery()
+  /*  const postsError = useSelector(getPostsError)
+    const postsStatus = useSelector(getPostsStatus) */
+    const orderedPostsId = useSelector(selectPostIds) 
+
+
     /*---- useEffects ----*/
        /* useEffect(()=>{
          if(postsStatus === "idle"){
@@ -16,21 +26,23 @@ const PostList = () => {
          }                                                        
        },[dispatch,postsStatus]) */
     /* --- JSX mini Components---- */
-                                                
+        
+
+
        let content;
-    if( postsStatus === "loading" ) {
+    if(isLoading) {
         content = ( 
         <p> Loading ....</p>
         )
     }
-    else if (postsStatus === "succeeded"){
+    else if (isSuccess){
         content = orderedPostsId.map(postId => (
             <PostsExcerpt key={postId} postId={postId} />
         ))
         }
-       else if(postsStatus === "failed" ){
+       else if(isError ){
             content = (
-                <p>{postsError}</p>
+                <p>{error}</p>
             )
        }  
 

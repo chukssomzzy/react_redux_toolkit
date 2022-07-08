@@ -1,14 +1,16 @@
-import React,{useState} from 'react'
-import { useDispatch, useSelector } from "react-redux"
-import {selectPostById, updatePost,deletePost} from "../features/posts/postSlice.js"
+import {useState} from 'react'
+import { /*useDispatch,*/ useSelector } from "react-redux"
+import {selectPostById /*, updatePost,deletePost*/} from "../features/posts/postSlice.js"
 import {selectAllUsers} from '../features/users/usersSlice.js'
 import {useParams, useNavigate} from "react-router-dom"
-
+import { useUpdatePostMutation, useDeletePostMutation} from '../features/posts/postSlice.js'
 const EditPostForm = () => {
     /*----Hooks -----*/
     const { postId } = useParams()
     const navigate = useNavigate()
-    const dispatch = useDispatch()
+    const [ updatePost , {isLoading}] = useUpdatePostMutation()
+    const [deletePost] = useDeletePostMutation()
+    //const dispatch = useDispatch()
 
     const post = useSelector(state => selectPostById(state,Number(postId)))
     const users = useSelector(selectAllUsers)
@@ -16,51 +18,42 @@ const EditPostForm = () => {
     const [title, setTitle] = useState(post?.title)
     const [content, setContent] = useState(post?.body)
     const [userId, setUserId] = useState(post?.userId)
-    const [requestStatus, setRequestStatus] = useState('idle')
+  //  const [requestStatus, setRequestStatus] = useState('idle')
 
     /*----Variables and Constants ----*/
         const onTitleChange = e => setTitle(e.target.value)
         const onAuthorChange = e => setUserId(Number(e.target.value))
         const onContentChange = e => setContent(e.target.value)
-        const canSave = [userId, content, title].every(Boolean) && requestStatus === 'idle'
-        const onSavePostClicked = () =>{
+        const canSave = [userId, content, title].every(Boolean) && !isLoading
+        const onSavePostClicked = async () =>{
             if(canSave){
                 try{
-                    setRequestStatus("pending")
-                    dispatch(updatePost({
+                    await updatePost({
                         id:post.id,
                         title,
                         body:content,
-                        userId,
-                        reactions: post.reactions
-                    })).unwrap()
+                        userId
+                    }) 
                     setTitle('')
                     setUserId('')
                     setContent('')
                     navigate(`/post/${postId}`)
                 }catch (e){
                    console.error('failled to save post',e)
-                }finally {
-                    setRequestStatus('idle')
                 }
             }
         }
-    const onDeletePostClicked = ()=>{
-        if(requestStatus === 'idle'){
+    const onDeletePostClicked = async ()=>{
         try{
-        setRequestStatus("pending")
-            dispatch(deletePost({
-                id: post.id
-            })).unwrap()
+            await deletePost({
+               id: post.id
+            }).unwrap()
             setTitle('')
             setContent('')
             setUserId('')
             navigate('/')
         }   catch (e){
             console.error('failed to delete post',e)
-        }  finally{
-          setRequestStatus("idle")
-        }
         }
     }
     /* --- JSX Variables.---*/

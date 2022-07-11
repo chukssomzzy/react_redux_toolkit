@@ -20,7 +20,7 @@ const initialState = postAdapter.getInitialState()
 
     export const extendedApiSlice = apiSlice.injectEndpoints({
         endpoints: builder =>({
-            getPosts : builder.query({
+            getPost : builder.query({
                 query: () => '/posts',
                 transformResponse: resp => {
                     let min = 1
@@ -157,7 +157,7 @@ const initialState = postAdapter.getInitialState()
 
 
  // return query result obj
- export const selectPostResults = extendedApiSlice.endpoints.getPosts.select()
+ export const selectPostResults = extendedApiSlice.endpoints.getPost.select()
 
 
   // creates memoized selector

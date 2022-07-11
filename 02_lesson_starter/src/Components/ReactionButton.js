@@ -13,7 +13,7 @@ const reactionEmoji = {
 const ReactionButton = ({post}) => {
     /*----Hooks ----*/
     //const dispatch = useDispatch()
-    const [addReactions] = useAddReactionsMutation
+    const [addReactions] = useAddReactionsMutation()
     /*-----JSX -----*/
         const reactionButton = Object.entries(reactionEmoji).map(([name,emoji])=>(
             <button

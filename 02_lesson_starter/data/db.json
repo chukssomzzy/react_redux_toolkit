@@ -283,23 +283,16 @@
     },
     {
       "userId": 1,
-      "id": 8,
-      "title": "dolorem dolore est ipsam",
-      "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae",
-      "reactions": {
-        "thumbsUp": 4,
-        "wow": 0,
-        "heart": 0,
-        "rocket": 0,
-        "coffee": 5,
-        "thumbsup": null
-      }
-    },
-    {
-      "userId": 1,
       "id": 10,
       "title": "optio molestias id quia eum",
-      "body": "quo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error"
+      "body": "quo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error",
+      "reactions": {
+        "thumbsup": 9,
+        "rocket": 2,
+        "heart": 1,
+        "wow": 2,
+        "coffee": 0
+      }
     },
     {
       "userId": 2,
@@ -311,7 +304,14 @@
       "userId": 2,
       "id": 12,
       "title": "in quibusdam tempore odit est dolorem",
-      "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio"
+      "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio",
+      "reactions": {
+        "thumbsup": 4,
+        "rocket": 4,
+        "heart": 0,
+        "wow": 4,
+        "coffee": 0
+      }
     },
     {
       "userId": 2,
@@ -347,7 +347,14 @@
       "userId": 2,
       "id": 18,
       "title": "voluptate et itaque vero tempora molestiae",
-      "body": "eveniet quo quis\nlaborum totam consequatur non dolor\nut et est repudiandae\nest voluptatem vel debitis et magnam"
+      "body": "eveniet quo quis\nlaborum totam consequatur non dolor\nut et est repudiandae\nest voluptatem vel debitis et magnam",
+      "reactions": {
+        "thumbsup": 0,
+        "rocket": 0,
+        "heart": 2,
+        "wow": 0,
+        "coffee": 1
+      }
     },
     {
       "userId": 2,
@@ -569,19 +576,40 @@
       "userId": 6,
       "id": 56,
       "title": "qui et at rerum necessitatibus",
-      "body": "aut est omnis dolores\nneque rerum quod ea rerum velit pariatur beatae excepturi\net provident voluptas corrupti\ncorporis harum reprehenderit dolores eligendi"
+      "body": "aut est omnis dolores\nneque rerum quod ea rerum velit pariatur beatae excepturi\net provident voluptas corrupti\ncorporis harum reprehenderit dolores eligendi",
+      "reactions": {
+        "thumbsup": 0,
+        "rocket": 0,
+        "heart": 0,
+        "wow": 0,
+        "coffee": 10
+      }
     },
     {
       "userId": 6,
       "id": 57,
       "title": "sed ab est est",
-      "body": "at pariatur consequuntur earum quidem\nquo est laudantium soluta voluptatem\nqui ullam et est\net cum voluptas voluptatum repellat est"
+      "body": "at pariatur consequuntur earum quidem\nquo est laudantium soluta voluptatem\nqui ullam et est\net cum voluptas voluptatum repellat est",
+      "reactions": {
+        "thumbsup": 0,
+        "rocket": 0,
+        "heart": 1,
+        "wow": 0,
+        "coffee": 23
+      }
     },
     {
       "userId": 6,
       "id": 58,
       "title": "voluptatum itaque dolores nisi et quasi",
-      "body": "veniam voluptatum quae adipisci id\net id quia eos ad et dolorem\naliquam quo nisi sunt eos impedit error\nad similique veniam"
+      "body": "veniam voluptatum quae adipisci id\net id quia eos ad et dolorem\naliquam quo nisi sunt eos impedit error\nad similique veniam",
+      "reactions": {
+        "thumbsup": 0,
+        "rocket": 0,
+        "heart": 0,
+        "wow": 0,
+        "coffee": 10
+      }
     },
     {
       "userId": 6,
@@ -845,7 +873,7 @@
         "wow": 0,
         "heart": 0,
         "rocket": 0,
-        "coffee": 0
+        "coffee": 2
       },
       "id": 101
     },
@@ -855,6 +883,20 @@
       "body": "check one two three",
       "userId": 2,
       "date": "2022-04-26T23:03:52.299Z"
+    },
+    {
+      "title": "Shorter word",
+      "body": "Testin",
+      "userId": 3,
+      "date": "2022-07-14T13:03:58.802Z",
+      "reactions": {
+        "thumbsup": 0,
+        "rocket": 0,
+        "heart": 0,
+        "wow": 0,
+        "coffee": 0
+      },
+      "id": 103
     }
   ]
 }

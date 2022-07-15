@@ -57,12 +57,13 @@ const EditPostForm = () => {
         }
     }
     /* --- JSX Variables.---*/
-        const userOptions = users.map(user=>(
-            <option 
+        const userOptions = users.map(user => {
+           return (<option 
             value={user.id}
             key={user.id}
             >{user.name}</option>
-        ))
+        )
+})
     /*----Conditional Rendering ---*/
         if(!post){
             return (

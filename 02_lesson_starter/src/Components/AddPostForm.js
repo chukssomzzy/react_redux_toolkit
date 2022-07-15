@@ -15,7 +15,6 @@ const AddPostForm = () => {
    // const [addRequestStatus, setAddRequestStatus] = useState('idle')
     const users = useSelector(selectAllUsers)
 
-
     const canSave = [title, content, userId].every(Boolean) && !isLoading
     /*---Functions----*/
     const onTitleChange = e => setTitle(e.target.value)
@@ -47,11 +46,13 @@ const AddPostForm = () => {
 
     /*---jsx const---*/
 
-        const userOptions = users.slice().map(user=>(
+        const userOptions = users.slice().map(user=>{
+            return(
             <option key={user.id} value={user.id}>
             {user.name}
             </option>
-        ))
+        )
+        })
 
 
 

@@ -1,21 +1,22 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import {selectAllUsers} from  "../features/users/usersSlice.js"
+import { selectAllUsers } from  "../features/users/usersSlice.js"
 
 
 const UsersList = () => {
     /*---- Hooks ----*/
 
     const users = useSelector(selectAllUsers)
-
     /*---- JSX variables ---- */
 
-    const renderedUsers = users.map(user => (
+    const renderedUsers = users.map(user => {
+      return  (
         <li key={user.id}>
         <Link to={`/user/${user.id}`}>{user.name}</Link>
         </li>
-    ))
+    )
+    } )
 
     /*---- JSX -----*/
 

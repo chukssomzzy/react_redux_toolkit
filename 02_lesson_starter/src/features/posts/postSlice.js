@@ -121,7 +121,7 @@ const initialState = postAdapter.getInitialState()
                     // 'updateQuerydata' requires the endpoints name and cached args 
                     // so it knows which pieces of cached state to update 
                     const patchResult = dispatch(
-                        extendedApiSlice.util.updateQueryData('getPosts', undefined, draft =>{
+                        extendedApiSlice.util.updateQueryData('getPost', undefined, draft =>{
                         // draft is an immer wrapper and can be mutated like create slice 
                             const post = draft.entities[postId]                    
                             if( post ) post.reactions = reactions

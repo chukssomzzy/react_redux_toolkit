@@ -33,6 +33,13 @@ header {
   position: sticky;
   top: 0;
 }
+.footer{
+    padding: 1rem;
+    text-align: center;
+    color: whitesmoke;
+    background-color: purple;
+    font-size: 1rem;
+}
 
 nav {
   display: flex;

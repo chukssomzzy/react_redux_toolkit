@@ -48,9 +48,9 @@ const PostList = () => {
 
     /*----- JSX ----*/
   return (
-    <setion>
+    <section>
       {content}
-      </setion>
+      </section>
   )
 }
 
